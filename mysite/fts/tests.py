@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 class PollsTest(LiveServerTestCase):
+    fixtures = ['admin_user.json']
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -24,7 +25,7 @@ class PollsTest(LiveServerTestCase):
         username_field.send_keys('admin')
 
         password_field = self.browser.find_element_by_name('password')
-        password_field.send_keys('adm1n')
+        password_field.send_keys('testing')
         password_field.send_keys(Keys.RETURN)
 
         # her username and password are accepted, and she is taken to
