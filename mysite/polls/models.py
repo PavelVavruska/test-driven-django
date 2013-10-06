@@ -1,4 +1,5 @@
 from django.db import models
 
-class Poll(object):
+
+class Poll(models.Model):
     pass
