@@ -26,3 +26,8 @@ class PollModelTest(TestCase):
         for field in Poll._meta.fields:
             if field.name ==  'pub_date':
                 self.assertEquals(field.verbose_name, 'Date published')
+
+    def test_poll_objects_are_named_after_their_question(self):
+        p = Poll()
+        p.question = 'How is babby formed?'
+        self.assertEquals(unicode(p), 'How is babby formed?')
